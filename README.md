@@ -79,8 +79,14 @@ RetroArch should launch but it is without any cores.
 
 ### Updater
 
-Download core info, assets from online updater in RetroArch interface.
+Navigate to Online Updater, then:
+1. Update Autoconfig Profiles
+2. Download Assets
 
 ### Place the Cores
 
-Cores are individual system libraries that are also built as binaries. The official link no longer has Armv6 binaries, which are required for RPi1. So we use prebuilt cores extracted from Lakka. Download them from this repo's [cores](https://github.com/nayaabkhan/rpi1b-retroarch/tree/main/cores). And move them to `~/.config/retroarch/cores`.
+Cores are individual system libraries that are also built as binaries. The official [link](http://buildbot.libretro.com/nightly/linux/armhf/latest) no longer has Armv6 binaries, which are required for RPi1. So we use prebuilt cores extracted from Lakka. Download them from this repo's [cores](https://github.com/nayaabkhan/rpi1b-retroarch/tree/main/cores). And move them to `~/.config/retroarch/cores`.
+
+### Game!
+
+The only way until now is to `scp` roms to the `~/.config/retroarch/downloads`. Then scan for the new roms and play!
