@@ -63,6 +63,12 @@ sudo apt update
 sudo apt upgrade
 ```
 
+### Install Packages
+
+```
+sudo apt install build-essential libasound2-dev libudev-dev
+```
+
 ### Build RetroArch Code
 
 ```
