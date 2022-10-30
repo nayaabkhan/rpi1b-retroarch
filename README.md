@@ -72,4 +72,15 @@ export CFLAGS="$CFLAGS -I$SYSROOT_PREFIX/usr/include/interface/vcos/pthreads -I$
 ./configure --disable-vg --disable-al --disable-cg --disable-sdl --disable-sdl2 --disable-ssl --disable-x11 --enable-opengles --disable-kms --disable-x11 --enable-zlib --enable-freetype --enable-translate --enable-cdrom --disable-discord --disable-langextra
 make
 make install
+retroarch
 ```
+
+RetroArch should launch but it is without any cores.
+
+### Updater
+
+Download core info, assets from online updater in RetroArch interface.
+
+### Place the Cores
+
+Cores are individual system libraries that are also built as binaries. The official link no longer has Armv6 binaries, which are required for RPi1. So we use prebuilt cores extracted from Lakka. Download them from this repo's [cores](https://github.com/nayaabkhan/rpi1b-retroarch/tree/main/cores). And move them to `~/.config/retroarch/cores`.
