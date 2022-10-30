@@ -101,3 +101,4 @@ The only way until now is to `scp` roms to the `~/.config/retroarch/downloads`. 
 - https://gist.github.com/AlexMax/32e5d038a66ce57253e740ea75736805
 - https://www.reddit.com/r/RetroArch/comments/l158qt/best_performing_retroarch_build_on_a_raspberry_pi/
 - https://github.com/libretro/Lakka-LibreELEC/blob/Lakka-v3.x/packages/libretro/retroarch/package.mk
+- https://github.com/libretro/Lakka-LibreELEC/blob/Lakka-v5.x/packages/lakka/retroarch_base/retroarch/package.mk
