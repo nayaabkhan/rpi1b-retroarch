@@ -66,7 +66,7 @@ sudo apt upgrade
 ### Install Packages
 
 ```
-sudo apt install build-essential libasound2-dev libudev-dev
+sudo apt install build-essential libasound2-dev libudev-dev libusb-1.0-0-dev
 ```
 
 ### Build RetroArch Code
@@ -75,7 +75,7 @@ sudo apt install build-essential libasound2-dev libudev-dev
 curl -LO 'https://github.com/libretro/RetroArch/archive/v1.12.0.tar.gz'
 tar -zxvf v1.12.0.tar.gz
 export CFLAGS="$CFLAGS -I$SYSROOT_PREFIX/usr/include/interface/vcos/pthreads -I$SYSROOT_PREFIX/usr/include/interface/vmcs_host/linux"
-./configure --disable-vg --disable-al --disable-cg --disable-sdl --disable-sdl2 --disable-ssl --disable-x11 --enable-opengles --disable-kms --disable-x11 --enable-zlib --enable-freetype --enable-translate --enable-cdrom --disable-discord --disable-langextra
+./configure --disable-vg --disable-al --disable-cg --disable-sdl --disable-sdl2 --disable-ssl --disable-x11 --enable-opengles --disable-kms --disable-x11 --enable-floathard --enable-zlib --enable-freetype --enable-translate --enable-cdrom --enable-hid --enable-libusb --disable-discord --disable-langextra
 make
 make install
 retroarch
