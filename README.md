@@ -113,6 +113,9 @@ The only way until now is to `scp` roms to the `~/.config/retroarch/downloads`. 
 
 ## Appendix 2: Resources
 
+### General
+- https://docs.rs-online.com/7b58/0900766b8168e193.pdf
+
 ### Useful commands
 - `vcgencmd measure_temp`
 - `vcgencmd measure_clock arm|core`
