@@ -6,9 +6,11 @@
    If **Buster** isn't showing in the imager then old images could be found at [here](http://downloads.raspberrypi.org/raspbian_lite/images/).
 2. Put in the SD card and let it expand the file system and reboot to login.
 
+Buster is needed because it has the libraries in expected location, i.e., `/opt/vc`.
+
 ### Enable USB WiFi
 
-1. Edit `sudo nano /etc/network/interfaces`
+1. Edit `/etc/network/interfaces`
 
    ```
    auto wlan0
@@ -18,7 +20,7 @@
    iface default inet dhcp
    ```
 
-2. Edit `sudo nano /etc/wpa_supplicant/wpa_supplicant.conf`
+2. Edit `/etc/wpa_supplicant/wpa_supplicant.conf`
 
    ```
    network={
@@ -63,25 +65,32 @@ sudo apt update
 sudo apt upgrade
 ```
 
-### Install Packages
+### Install Build Dependencies
 
 ```
 sudo apt install build-essential libasound2-dev libudev-dev libusb-1.0-0-dev
 ```
 
-### Build RetroArch Code
+### Compile RetroArch
 
-```
-curl -LO 'https://github.com/libretro/RetroArch/archive/v1.12.0.tar.gz'
-tar -zxvf v1.12.0.tar.gz
-export CFLAGS="$CFLAGS -I$SYSROOT_PREFIX/usr/include/interface/vcos/pthreads -I$SYSROOT_PREFIX/usr/include/interface/vmcs_host/linux"
-./configure --disable-vg --disable-al --disable-cg --disable-sdl --disable-sdl2 --disable-ssl --disable-x11 --enable-opengles --disable-kms --disable-x11 --enable-floathard --enable-zlib --enable-freetype --enable-translate --enable-cdrom --enable-hid --enable-libusb --disable-discord --disable-langextra
-make
-make install
-retroarch
-```
+1. Download source:
+   `curl -LO 'https://github.com/libretro/RetroArch/archive/v1.12.0.tar.gz'`
+2. Unpack:
+   `tar -zxvf v1.12.0.tar.gz`
+3. Change to source folder:
+   `cd RetroArch-1.12.0`
+4. Export flags:
+   `export CFLAGS="$CFLAGS -I$SYSROOT_PREFIX/usr/include/interface/vcos/pthreads -I$SYSROOT_PREFIX/usr/include/interface/vmcs_host/linux"`
+5. Configure:
+   `./configure --disable-vg --disable-al --disable-cg --disable-sdl --disable-sdl2 --disable-ssl --disable-x11 --enable-opengles --disable-kms --disable-x11 --enable-floathard --enable-zlib --enable-freetype --enable-translate --enable-cdrom --enable-hid --enable-libusb --disable-discord --disable-langextra`
+6. Compile:
+   `make`
+7. Install:
+   `make install`
+8. Launch:
+   `retroarch`
 
-RetroArch should launch but it is without any images, fonts, and cores.
+It should launch without any errors. Although, it is missing assets (images, fonts, etc.), controller configurations, and cores.
 
 ### Download assets and controller profiles
 
