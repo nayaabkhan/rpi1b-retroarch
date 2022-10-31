@@ -34,6 +34,8 @@ Buster is needed because it has the libraries in expected location, i.e., `/opt/
 
 ### Overclock
 
+⚠️ Make sure you have at least a heatsink installed. A fan is even better.
+
 Launch `sudo raspi-config` and then select **Performance Options > Overclock > Turbo**
 
 Or these are working settings to put on `/boot/config.txt`:
