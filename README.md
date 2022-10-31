@@ -81,15 +81,15 @@ make install
 retroarch
 ```
 
-RetroArch should launch but it is without any cores.
+RetroArch should launch but it is without any images, fonts, and cores.
 
-### Updater
+### Download assets and controller profiles
 
 Navigate to Online Updater, then:
 1. Update Autoconfig Profiles
 2. Download Assets
 
-### Place the Cores
+### Install the Cores
 
 Cores are individual system libraries that are also built as binaries. The official [link](http://buildbot.libretro.com/nightly/linux/armhf/latest) no longer has Armv6 binaries, which are required for RPi1. So we use prebuilt cores extracted from Lakka. Download them from this repo's [cores](https://github.com/nayaabkhan/rpi1b-retroarch/tree/main/cores). And move them to `~/.config/retroarch/cores`.
 
