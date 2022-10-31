@@ -97,7 +97,21 @@ Cores are individual system libraries that are also built as binaries. The offic
 
 The only way until now is to `scp` roms to the `~/.config/retroarch/downloads`. Then scan for the new roms and play!
 
-### Resources
+## Appendix 1: Notes
+- There is an efficient native API for video rendering on Raspberry Pi called DispmanX, but seems like RetroArch no longer supports it. So have to use OpenGL.
+
+<img
+   alt="Raspberry Pi Software Architecture"
+   src="https://user-images.githubusercontent.com/234889/198924934-c2178bf6-4aa4-446b-896e-cf43cc55af51.png"
+   width="50%"
+/>
+    
+   - [https://elinux.org/Raspberry_Pi_VideoCore_APIs](https://elinux.org/Raspberry_Pi_VideoCore_APIs)
+   - https://github.com/libretro/RetroArch/issues/2494
+   - https://github.com/libretro/RetroArch/issues/500
+- Neon (`--enable-neon`) is not supported by Raspberry Pi Model B. So it should not be enabled during `./configure`. See [https://bugs.launchpad.net/raspbian/+bug/1734592](https://bugs.launchpad.net/raspbian/+bug/1734592).
+
+## Appendix 2: Resources
 - https://gist.github.com/AlexMax/32e5d038a66ce57253e740ea75736805
 - https://www.reddit.com/r/RetroArch/comments/l158qt/best_performing_retroarch_build_on_a_raspberry_pi/
 - https://github.com/libretro/Lakka-LibreELEC/blob/Lakka-v3.x/packages/libretro/retroarch/package.mk
