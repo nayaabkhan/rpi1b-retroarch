@@ -100,11 +100,11 @@ The only way until now is to `scp` roms to the `~/.config/retroarch/downloads`. 
 ## Appendix 1: Notes
 - There is an efficient native API for video rendering on Raspberry Pi called DispmanX, but seems like RetroArch no longer supports it. So have to use OpenGL.
 
-<img
-   alt="Raspberry Pi Software Architecture"
-   src="https://user-images.githubusercontent.com/234889/198924934-c2178bf6-4aa4-446b-896e-cf43cc55af51.png"
-   width="50%"
-/>
+   <img
+      alt="Raspberry Pi Software Architecture"
+      src="https://user-images.githubusercontent.com/234889/198924934-c2178bf6-4aa4-446b-896e-cf43cc55af51.png"
+      width="50%"
+   />
     
    - [https://elinux.org/Raspberry_Pi_VideoCore_APIs](https://elinux.org/Raspberry_Pi_VideoCore_APIs)
    - https://github.com/libretro/RetroArch/issues/2494
@@ -112,6 +112,25 @@ The only way until now is to `scp` roms to the `~/.config/retroarch/downloads`. 
 - Neon (`--enable-neon`) is not supported by Raspberry Pi Model B. So it should not be enabled during `./configure`. See [https://bugs.launchpad.net/raspbian/+bug/1734592](https://bugs.launchpad.net/raspbian/+bug/1734592).
 
 ## Appendix 2: Resources
+
+### Useful commands
+- `vcgencmd measure_temp`
+- `vcgencmd measure_clock arm|core`
+- `vcgencmd get_mem arm|gpu`
+- `free -h`
+- Full list of `vcgencmd`: [https://forums.raspberrypi.com/viewtopic.php?t=158157#p1029332](https://forums.raspberrypi.com/viewtopic.php?t=158157#p1029332)
+- `ldd binary` to see all modules
+- `readelf -A file` for details of file
+- `lsmod` for all loaded modules
+- `modprobe modulename` to load a module
+
+### Overclocking
+- [https://pimylifeup.com/raspberry-pi-overclock/](https://pimylifeup.com/raspberry-pi-overclock/)
+- [https://www.mobilefish.com/developer/raspberry_pi/raspberry_pi_quickguide_overclock_manually.html](https://www.mobilefish.com/developer/raspberry_pi/raspberry_pi_quickguide_overclock_manually.html)
+- [https://www.tomshardware.com/how-to/overclock-any-raspberry-pi](https://www.tomshardware.com/how-to/overclock-any-raspberry-pi)
+- [https://www.cyberciti.biz/faq/linux-find-out-raspberry-pi-gpu-and-arm-cpu-temperature-command/](https://www.cyberciti.biz/faq/linux-find-out-raspberry-pi-gpu-and-arm-cpu-temperature-command/)
+
+### RetroArch
 - https://gist.github.com/AlexMax/32e5d038a66ce57253e740ea75736805
 - https://www.reddit.com/r/RetroArch/comments/l158qt/best_performing_retroarch_build_on_a_raspberry_pi/
 - https://github.com/libretro/Lakka-LibreELEC/blob/Lakka-v3.x/packages/libretro/retroarch/package.mk
