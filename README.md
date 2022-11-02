@@ -108,6 +108,23 @@ Cores are individual system libraries that are also built as binaries. The offic
 
 The only way until now is to `scp` roms to the `~/.config/retroarch/downloads`. Then scan for the new roms and play!
 
+### Bluetooth
+
+For me, unfortunately, the 8bitdo SN30 Pro doesn't work via USB. It is detected but no buttons work. So I went for configuring bluetooth. The USB bluetooth module works out of the box.
+
+1. Install bluetooth package to fix issue where paired devices do not pair after getting disconnected:
+   
+   `sudo apt install bluetooth`
+
+2. Pair and connect devices using `bluetoothctl`.
+   ```
+   > scan on
+   > scan off
+   > trust <device MAC>
+   > pair <device MAC>
+   > connect <device MAC>
+   ```
+
 ## Appendix 1: Notes
 - There is an efficient native API for video rendering on Raspberry Pi called DispmanX, but seems like RetroArch no longer supports it. So have to use OpenGL.
 
